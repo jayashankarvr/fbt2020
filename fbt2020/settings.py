@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.user',
     'apps.team',
-    'apps.fixture',
     'apps.tournament',
     'apps.dashboard',
 ]
@@ -87,8 +86,8 @@ WSGI_APPLICATION = 'fbt2020.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'fbt2020',
-        'USER': 'jayashankar',
+        'NAME': 'fbt_2020',
+        'USER': 'jay',
         'PASSWORD': 'password',
         'HOST': 'localhost',
         'PORT': '',

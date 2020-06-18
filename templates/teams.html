@@ -8,11 +8,15 @@
 				<div class="shadow-sm border p-3">
 					<h3>Add new Team</h3>
 					<hr />
+					{% if form %}
 					<form action="." method="POST">
 						{% csrf_token %}
 						{{ form.as_p }}
 						<input type="submit" name="submit" />
 					</form>
+					{% else %}
+						Registration closed
+					{% endif %}
 				</div>
 			</div>
 			<div class="col col-md-6">

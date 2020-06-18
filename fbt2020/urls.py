@@ -15,10 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from apps.tournament.views import HomeView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', HomeView.as_view(), name="home"),
+    path('', include(('apps.tournament.urls', 'fbt2020'), namespace="tour")),
     path('teams/', include(('apps.team.urls', 'fbt2020'), namespace="team")),
 ]

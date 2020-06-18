@@ -1,5 +1,5 @@
 from django.forms import ModelForm, DateInput
-from .models import Tournament
+from .models import Tournament, Fixture
 
 
 class TournamentForm(ModelForm):
@@ -7,3 +7,10 @@ class TournamentForm(ModelForm):
 	class Meta:
 		model = Tournament
 		exclude = ['start_date', 'end_date',]
+
+
+class FixtureForm(ModelForm):
+	"""  """
+	class Meta:
+		model = Fixture
+		exclude = []
