@@ -34,11 +34,22 @@ class Teamview(FormView):
 		""" Only 4 teams for first round id 10 teams"""
 		fixture = Fixture()
 		first_round_teams = Team.objects.all()[:4]
-		
-		tournament = first_round_teams[0].tournament
-		date_fix = tournament.start_date
-		venue = Venue.objects.first()
+		fixture.title="Round 1 A"
+		fixture.tournament = first_round_teams[0].tournament
+		fixture.a_team = first_round_teams[0]
+		fixture.b_team = first_round_teams[1]
+		fixture.date_time = tournament.start_date
+		fixture.venue = Venue.objects.first()
+		fixture.save()
 
+		fixture2 = Fixture()
+		fixture2.title="Round 1 B"
+		fixture2.tournament = first_round_teams[0].tournament
+		fixture2.a_team = first_round_teams[2]
+		fixture2.b_team = first_round_teams[3]
+		fixture2.date_time = tournament.start_date
+		fixture2.venue = Venue.objects.first()
+		fixture2.save()
 
 
 class TeamDetailView(FormView):
