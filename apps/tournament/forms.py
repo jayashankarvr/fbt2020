@@ -1,5 +1,6 @@
 from django.forms import ModelForm, DateInput
-from .models import Tournament, Fixture
+from .models import Tournament
+from apps.team.models import Fixture
 
 
 class TournamentForm(ModelForm):

@@ -4,7 +4,7 @@ from django.views.generic import TemplateView
 from .models import Tournament
 from .forms import TournamentForm
 from django.shortcuts import get_object_or_404
-from .models import Team
+from apps.team.models import Team
 from .forms import FixtureForm
 
 class HomeView(FormView):
@@ -47,9 +47,9 @@ class Fixtureview(FormView):
 		return super().form_valid(form)
 
 
-class CreateFixture(TemplateView):
+# class CreateFixture(TemplateView):
 
-	def create_fixture(self):
-		""" For 10 teams, first round should be a fixture of four teams """
-		get_four = Team.objects.all()[:4]
-		get_date = 
+# 	def create_fixture(self):
+# 		""" For 10 teams, first round should be a fixture of four teams """
+# 		get_four = Team.objects.all()[:4]
+# 		get_date = 
