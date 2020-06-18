@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+	<div class="container py-5">
+		<h1 class="py-5 text-center text-success"> Welcome to FBT2020</h1>
+		<div class="row">
+			<div class="col col-md-6">
+				<div class="shadow-sm border p-3">
+					<h3>Add new Tournament</h3>
+					<hr />
+					<form action="." method="POST">
+						{% csrf_token %}
+						{{ form.as_p }}
+						<input type="submit" name="submit" />
+					</form>
+				</div>
+			</div>
+			<div class="col col-md-6">
+				<div class="shadow-sm border p-3">
+					<h3>Tournaments</h3>
+					<hr />
+					{% for tour in tournaments %}
+						<a href="{% url 'team:teams' tour.id %}">
+							{{ tour.title }}
+						</a>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock content %}

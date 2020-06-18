@@ -1,7 +1,6 @@
 from django.db import models
 
 
-
 class Team(models.Model):
 	"""
 	Tournament Team model
